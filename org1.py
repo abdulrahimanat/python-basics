@@ -34,10 +34,9 @@ nested_dict = {
 
 del nested_dict["ResponseMetadata"] 
 
-for d in nested_dict:
-    for l in nested_dict['Accounts']:
-        for k in ["Arn", "Email","JoinedTimestamp"]:
-            del l[k]
+for l in nested_dict['Accounts']:
+    for k in ["Arn", "Email","JoinedTimestamp"]:
+        del l[k]
 
 json_object = json.dumps(nested_dict, indent = 4)   
 print(json_object)  
